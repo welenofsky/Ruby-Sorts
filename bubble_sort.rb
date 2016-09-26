@@ -2,11 +2,15 @@ objects = [0, 1, 3, 9, 2, 20, 100, 55, -1]
 
 def bubble_sort(array)
 
+	l = array.length
+
+	return array if l <= 1
+
 	loop do
 
 		sorted = true
 
-		(array.length - 1).times do |i|
+		(l - 1).times do |i|
 
 			if array[i] > array[i + 1]
 
