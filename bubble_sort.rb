@@ -1,22 +1,28 @@
 objects = [0, 1, 3, 9, 2, 20, 100, 55, -1]
 
-def bubble_sort(unsorted)
-	index = 0
-	sorted = 0
+def bubble_sort(array)
 
-	until sorted == unsorted.length - 1 do
-		if unsorted[index] > unsorted[index + 1]
-			unsorted[index], unsorted[index + 1] = unsorted[index + 1], unsorted[index]
-			sorted = 0
-		else
-			sorted += 1
-			index = index + 1
+	loop do
+
+		sorted = true
+
+		(array.length - 1).times do |i|
+
+			if array[i] > array[i + 1]
+
+				array[i], array[i + 1] = array[i + 1], array[i]
+				sorted = false
+
+			end
+
 		end
 
-		index = 0 if index == unsorted.length - 1
+		break if sorted
 
 	end
-	unsorted
+
+	array
+
 end
 
 
