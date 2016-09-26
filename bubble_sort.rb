@@ -4,7 +4,7 @@ def bubble_sort(unsorted)
 	index = 0
 	sorted = 0
 
-	while true do
+	until sorted == unsorted.length - 1 do
 		if unsorted[index] > unsorted[index + 1]
 			unsorted[index], unsorted[index + 1] = unsorted[index + 1], unsorted[index]
 			sorted = 0
@@ -12,16 +12,12 @@ def bubble_sort(unsorted)
 			sorted += 1
 			index = index + 1
 		end
-		if index == unsorted.length - 1
-			if sorted == unsorted.length - 1
-				break
-			else
-				sorted = 0
-			end
-			index = 0
-		end
+
+		index = 0 if index == unsorted.length - 1
+
 	end
 	unsorted
 end
+
 
 p bubble_sort(objects)
